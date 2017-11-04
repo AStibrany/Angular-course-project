@@ -7,7 +7,6 @@
     fxLayoutGap.xs="0">
 <!-- Description and image -->
   <div fxFlex="40" *ngIf="dish">
-<!--  <div fxFlex="40">  -->
     <md-card>
             <md-card-header>
               <md-card-title>
@@ -24,22 +23,19 @@
               </md-card-actions>
     </md-card>
   </div>
+
 <!-- Comments and rating -->
   <div fxFlex="40" *ngIf="dish">
 
-
-    <md-grid-list cols="1" rowHeight="100px">
       <h2> Comments</h2>
+    <md-list>
+      <md-list-item *ngFor="let comm of dish.comments">
+          <p md-line> {{comm.comment}} </p>
+          <p md-line> {{comm.rating}} Stars</p>
+          <p md-line> -- {{comm.author}}  {{comm.date | date}}</p>
 
-
-      <md-grid-tile *ngFor="let comm of dish.comments">
-          {{comm.comment}}<br>
-          {{comm.rating}} Stars<br>
-          -- {{comm.author}}  {{comm.date | date}}<br>  <!-- day out by one here!-->
-      </md-grid-tile>
-
-  </md-grid-list>
-
+      </md-list-item>
+    </md-list>
   </div>
 
 </div>
