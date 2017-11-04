@@ -5,7 +5,7 @@
     fxLayoutAlign.gt-md="space-around center"
     fxLayoutGap="10px"
     fxLayoutGap.xs="0">
-
+<!-- Description and image -->
   <div fxFlex="40" *ngIf="dish">
 <!--  <div fxFlex="40">  -->
     <md-card>
@@ -22,11 +22,24 @@
                 <button md-button>LIKE</button>
                 <button md-button>SHARE</button>
               </md-card-actions>
-            </md-card>
+    </md-card>
   </div>
+<!-- Comments and rating -->
+  <div fxFlex="40" *ngIf="dish">
 
-  <div fxFlex="40">
-    <p>Display the list of comments here</p>
+
+    <md-grid-list cols="1" rowHeight="100px">
+      <h2> Comments</h2>
+
+
+      <md-grid-tile *ngFor="let comm of dish.comments">
+          {{comm.comment}}<br>
+          {{comm.rating}} Stars<br>
+          -- {{comm.author}}  {{comm.date | date}}<br>  <!-- day out by one here!-->
+      </md-grid-tile>
+
+  </md-grid-list>
+
   </div>
 
 </div>
