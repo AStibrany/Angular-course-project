@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   dish: Dish;
   promotion: Promotion;
+  
   constructor(private dishservice: DishService,
     private promotionservice: PromotionService) { }
 
