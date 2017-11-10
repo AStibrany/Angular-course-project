@@ -58,11 +58,10 @@
           <h2>Corporate Leadership</h2>
           <md-list>
             <md-list-item *ngFor="let lead of leaders" [routerLink]="['/leader', lead.id]">
-              <img height="50px" src={{lead.image}}>
+              <img md-list-avatar src={{lead.image}} alt={{lead.name}}>
               <p md-line> {{lead.name}} {{lead.abbr}} </p>
               <p md-line> {{lead.designation}}</p>
-              <p md-line> {{lead.description}}</p>
-
+              <p md-line>{{lead.description}}</p>
             </md-list-item>
           </md-list>
         </div>
